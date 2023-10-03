@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  database:
+    platform: linux/x86_64
+    image: mysql:5.5
+    environment:
+      - MYSQL_ROOT_PASSWORD='password'
+  app:
+    image: 5efd4c7b28fc95863a57517f6665a74c6a410ec5b3859b3aedc3a98ff75dfde4 
+    ports:
+      - "8080:80"
