@@ -1,4 +1,4 @@
-FROM php:5.6.40-apache
+FROM php:7.3.33-apache
 
 
 ###RUN apk add --update --no-cache libgd libpng-dev libjpeg-turbo-dev freetype-dev
@@ -22,4 +22,3 @@ COPY ./apache.conf /etc/apache2/sites-available/000-default.conf
 
 WORKDIR /var/www/
 
-EXPOSE 80

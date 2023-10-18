@@ -9,9 +9,8 @@ services:
       - "8080:80"
     volumes:
       - ".:/var/www"
-    network_mode: bridge
-    links: 
-      - database:database
+    depends_on:
+      - database
   database:
     platform: linux/x86_64
     image: mysql:5.7.43
@@ -23,6 +22,4 @@ services:
       - 3307:3306
     volumes:
       - './.mysql-data/db:/var/lib/mysql'
-    expose:
-      - 3036
-    network_mode: bridge
+    
